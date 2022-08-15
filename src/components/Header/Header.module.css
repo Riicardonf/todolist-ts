@@ -1,0 +1,39 @@
+.header {
+  height: 12.5rem;
+  background: var(--gray-700);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  width: 5.75rem;
+  height: 3rem;
+}
+
+.brand h1 {
+  padding-left: 1rem;
+}
+
+.brand h1:before {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 2.5rem;
+  content: 'to';
+}
+
+.brand h1:after {
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 2.5rem;
+  content: 'do';
+}
+
+.brand img {
+  width: 1.375rem;
+  height: 2.25rem;
+}
+

@@ -1,8 +1,12 @@
+import { Header } from "./components/Header/Header";
+
 
 export function App() {
 
   return (
-    <h1>TODO!</h1>
+    <>
+      <Header />
+    </>
   )
 }
 
