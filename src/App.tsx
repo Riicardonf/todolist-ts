@@ -1,6 +1,5 @@
 import { Header } from "./components/Header/Header";
-import { TaskInput } from "./components/TaskInput/TaskInput";
-import { TaskList } from "./components/TaskList/TaskList";
+import { Todo } from "./components/Todo/Todo";
 
 import styles from './App.module.css';
 
@@ -11,10 +10,7 @@ export function App() {
       <Header />
       
       <div className={styles.wrapper}>
-
-        <TaskInput />
-
-        <TaskList />
+        <Todo />
       </div>
     </>
   )

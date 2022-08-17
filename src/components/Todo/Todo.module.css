@@ -1,20 +1,22 @@
 .taskInput {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   margin-top: calc(0px - 1.5rem - 6px); 
   height: 3.375rem;
+}
+
+.taskInput form {
+  display: flex;
+  flex-direction: row;
   gap: 0.5rem;
 }
 
 .taskInput input[type="text"] {
   width: 39rem;
   border-radius: 8px;
-
   background: var(--gray-500);
-
   border: 1px solid var(--gray-700);
   padding: 1rem;
 
@@ -41,4 +43,9 @@
 
 .taskInput button:hover {
   background-color: var(--blue);
+}
+
+.taskInput button:disabled{
+  opacity: 0.8;
+  cursor: not-allowed;
 }

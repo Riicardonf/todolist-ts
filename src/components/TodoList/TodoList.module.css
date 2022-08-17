@@ -27,8 +27,7 @@
   font-size: .875rem;
 }
 
-
-.counter {
+ .createdTaskscounter {
   color: var(--white);
   background-color: var(--gray-400);
   border-radius: 50%;
@@ -36,10 +35,21 @@
   font-size: .75rem;
   font-weight: bold;
   text-align: center;
+  width: 52px;
+}
+
+.doneTasksCounter {
+  color: var(--white);
+  background-color: var(--gray-400);
+  border-radius: 999px;
+  padding: .125rem .5rem;
+  font-size: .75rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .tasksList {
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-top: 1px solid var(--gray-400);
   border-radius: 8px;
   width: 46rem;
