@@ -1,0 +1,46 @@
+.task {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--gray-500);
+  border-radius: 8px;
+  max-height: 4.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.task > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.task > div > button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--blue);
+
+  transition: all 0.2s;
+}
+
+.task > div > button:hover {
+  opacity: .7;
+}
+
+.task > button {
+  background: transparent;
+  border: 0;
+  line-height: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.task > button:hover {
+  color: var(--red-danger);
+}

@@ -4,12 +4,25 @@ import { v4 as uuid} from 'uuid';
 
 import styles from './Todo.module.css';
 
-import { TodoList, TaskProps } from "../TodoList/TodoList";
+import { TodoList } from "../TodoList/TodoList";
+import { TaskProps } from '../Task/Task';
 
 export function Todo(){
   const [tasks, setTasks] = useState<TaskProps[]>([]);
 
   const [newTask, setNewTask] = useState('');
+
+  function deleteTask(id: string) {
+    const tasksWithoutDeletedOne = tasks.filter(task => task.id !== id)
+
+    setTasks(tasksWithoutDeletedOne);
+  }
+
+  function completeTask(id: string){
+    const updatedTasks = tasks.map(task => (task.id === id) ? {...task, isDone: !task.isDone }: task);
+
+    setTasks(updatedTasks);
+  }
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
@@ -20,7 +33,6 @@ export function Todo(){
 
     setNewTask('');
   }
-
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('');
@@ -48,7 +60,7 @@ export function Todo(){
         </button>
       </form>
       
-      <TodoList tasks={tasks} />  
+      <TodoList tasks={tasks} onDeleteTask={deleteTask} onCompleteTask={completeTask} />  
     </div>
   )
 }

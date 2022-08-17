@@ -1,22 +1,18 @@
 import styles from './TodoList.module.css';
 
 import clipboard from '../../assets/clipboard.svg';
-
-
-export interface TaskProps {
-  id: string;
-  description: string;
-  isDone: boolean;
-}
+import { Task, TaskProps } from '../Task/Task';
 
 interface TaskList {
   tasks: TaskProps[];
+  onDeleteTask: (id: string) => void;
+  onCompleteTask: (id: string) => void;
 }
 
-export function TodoList({ tasks }: TaskList){ 
-
+export function TodoList({ tasks, onDeleteTask, onCompleteTask }: TaskList ){ 
+  
   const createdTasksCount = tasks.length;
-  const isDoneTaskCount = tasks.filter(task => task.isDone).length
+  const isDoneTasksCount = tasks.filter(task => task.isDone).length
 
   return (
     <div>
@@ -25,7 +21,7 @@ export function TodoList({ tasks }: TaskList){
           Tarefas Criadas <span>{createdTasksCount}</span> 
         </span>
         <span className={styles.doneTasks}> 
-          Concluídas <span>{isDoneTaskCount} de {createdTasksCount}</span> 
+          Concluídas <span>{isDoneTasksCount} de {createdTasksCount}</span> 
         </span>
       </div>
 
@@ -36,7 +32,16 @@ export function TodoList({ tasks }: TaskList){
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <span>Crie tarefas e organize seus itens a fazer</span>
           </div> : 
-            tasks.map(task => task.description)
+            tasks.map(task => 
+              <Task 
+                key={task.id} 
+                id={task.id} 
+                description={task.description} 
+                isDone={task.isDone} 
+                onDeleteTask={onDeleteTask}
+                onCompleteTask={onCompleteTask}
+              />
+            )
           }
       </div>
     </div>

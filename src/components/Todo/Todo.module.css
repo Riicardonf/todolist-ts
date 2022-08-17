@@ -16,7 +16,7 @@
   color: var(--gray-100);
 }
 
-.todo button {
+.todo > form > button {
   padding: 1rem;
   border-radius: 8px;
   background: var(--blue-dark);
@@ -30,7 +30,7 @@
   transition: color 0.1s, background-color 0.1s;
 }
 
-.todo button:hover {
+.todo > button:hover {
   background-color: var(--blue);
 }
 
