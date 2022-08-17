@@ -19,24 +19,22 @@ export function TodoList({ tasks }: TaskList){
   const isDoneTaskCount = tasks.filter(task => task.isDone).length
 
   return (
-    <div className={styles.tasks}>
+    <div>
       <div className={styles.tasksInfo}>
         <span className={styles.createdTasks}>
-          Tarefas Criadas <span className={styles.createdTaskscounter}>{createdTasksCount}</span> 
+          Tarefas Criadas <span>{createdTasksCount}</span> 
         </span>
         <span className={styles.doneTasks}> 
-          Concluídas <span className={styles.doneTasksCounter}>{isDoneTaskCount} de {createdTasksCount}</span> 
+          Concluídas <span>{isDoneTaskCount} de {createdTasksCount}</span> 
         </span>
       </div>
 
       <div className={styles.tasksList}>
         {tasks.length === 0 ?
-          <div className={styles.tasksListEmpty}>
-            <div>
-              <img src={clipboard} />
-              <strong>Você ainda não tem tarefas cadastradas</strong>
-              <span>Crie tarefas e organize seus itens a fazer</span>
-            </div>
+          <div className={styles.emptyList}>
+            <img src={clipboard} />
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            <span>Crie tarefas e organize seus itens a fazer</span>
           </div> : 
             tasks.map(task => task.description)
           }

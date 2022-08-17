@@ -1,51 +1,40 @@
-.taskInput {
+.todo form {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  margin-top: calc(0px - 1.5rem - 6px); 
-  height: 3.375rem;
-}
-
-.taskInput form {
-  display: flex;
-  flex-direction: row;
   gap: 0.5rem;
+  margin-top: calc(0px - 1.5rem - 6px); 
 }
 
-.taskInput input[type="text"] {
-  width: 39rem;
-  border-radius: 8px;
-  background: var(--gray-500);
-  border: 1px solid var(--gray-700);
+.todo input[type="text"] {
   padding: 1rem;
-
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  width: 100%;
+  background: var(--gray-500);
   color: var(--gray-100);
 }
 
-.taskInput button {
+.todo button {
   padding: 1rem;
   border-radius: 8px;
-
   background: var(--blue-dark);
   border: 1px solid var(--blue-dark);
-  color: var(--white);
-
+  color: var(--gray-100);
   cursor: pointer;
-
   display: flex;
   align-items: center;
-  justify-content: center;
 
   gap: 0.5rem;
   transition: color 0.1s, background-color 0.1s;
 }
 
-.taskInput button:hover {
+.todo button:hover {
   background-color: var(--blue);
 }
 
-.taskInput button:disabled{
+.todo button:disabled{
   opacity: 0.8;
   cursor: not-allowed;
 }

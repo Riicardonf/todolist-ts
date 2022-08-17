@@ -33,23 +33,21 @@ export function Todo(){
   }
 
   return (
-    <div>
-      <div className={styles.taskInput}>
-        <form onSubmit={handleCreateNewTask}>
-          <input 
-            type="text" 
-            placeholder="Adicione uma nova tarefa"
-            value={newTask}
-            onChange={handleNewTaskChange}
-            onInvalid={handleNewTaskInvalid}
-            required
-          />
-          <button type="submit" disabled={newTask.trim().length < 3}> 
-            Criar <PlusCircle/>  
-          </button>
-        </form>
-      </div>
-
+    <div className={styles.todo}>
+      <form onSubmit={handleCreateNewTask}>
+        <input 
+          type="text" 
+          placeholder="Adicione uma nova tarefa"
+          value={newTask}
+          onChange={handleNewTaskChange}
+          onInvalid={handleNewTaskInvalid}
+          required
+        />
+        <button type="submit" disabled={newTask.trim().length < 3}> 
+          Criar <PlusCircle/>  
+        </button>
+      </form>
+      
       <TodoList tasks={tasks} />  
     </div>
   )
