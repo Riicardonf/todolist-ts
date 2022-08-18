@@ -22,14 +22,20 @@ export function Task({id, description, isDone, onDeleteTask, onCompleteTask}: Ta
 
   return(
     <div className={styles.task}>
-      <div>
-        <button type="button" onClick={handleCompleteTask}> 
-         {isDone ? <CheckCircle weight="fill" size={24} /> :
-           <Circle size={24} /> 
-        }
-        </button>
-        <span>{description}</span>
-      </div>
+      {isDone ? 
+        <div className={styles.taskDone}>
+          <button type="button" onClick={handleCompleteTask}> 
+           <CheckCircle weight="fill" size={24} /> 
+          </button>
+          <span>{description}</span>
+        </div> : 
+        <div className={styles.taskNotDone}>
+          <button type="button" onClick={handleCompleteTask}> 
+            <Circle size={24} /> 
+          </button>
+          <span>{description}</span>
+        </div> 
+      } 
       <button type="button" onClick={handleDeleteTask}>
         <Trash size={20} />
       </button>
